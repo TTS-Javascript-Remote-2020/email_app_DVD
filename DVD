@@ -1,0 +1,99 @@
+// Step 1
+var inbox = { 
+  mailboxes : 
+  [
+    {
+      name: 'GMAIL',
+      mailbox: ['inbox','flagged','sent','draft','junk','trash','archive']
+    },
+    {
+      name: 'Apple Mail',
+      mailbox: ['inbox','flagged','sent','draft','junk','trash','archive']
+    },
+    {
+      name: 'Protonmail',
+      mailbox: ['inbox','flagged','sent','draft','junk','trash','archive']
+    },
+    {
+      name: "Yahoo",
+      mailbox: ['inbox','flagged','sent','draft','junk','trash','archive']
+    },
+    {
+      name: "AOL",
+      mailbox: ['inbox','flagged','sent','draft','junk','trash','archive']
+    }
+  ]
+  ,
+  contacts: [
+    {
+      name: "Mike",
+      lastMessage: "Do you have Toilet Paper?"},
+    {
+      name: "David",
+      lastMessage: "Nigerian Prince accidentally sent me $59 million dollars and some toilet paper!"
+    }
+  ],
+  email: [
+    {
+      to: "Bob",
+      subject: "JavaScript Help",
+      body: "Can I get a little assistance with the homework?",
+      visible: true,
+      sent: true,
+      mailboxes: ["flagged", "sent"]
+    },
+    {
+      to: "David",
+      subject: "JavaScript Homework",
+      body: "Can you do my homework for me? I have toilet paper to trade.",
+      visible: false,
+      sent: false,
+      mailboxes: ["drafts", "inbox"]
+
+    },
+    {
+      to: "Ralph",
+      subject: "Picture posted at the Post Office",
+      body: "We ran your background check and we have a few questions.",
+      visible: true,
+      sent: false,
+      mailboxes: ["drafts", "inbox", "flagged"]
+    }
+  ]
+}
+//Step 2
+//  - Get a list of inbox names
+for(var i = 0; i < 5; i++) {
+  console.log("Email inboxes: - " + inbox.mailboxes[i].name);
+}
+
+
+// Step 2.1 - Get a list of emails
+var emailList = inbox.email;
+console.log("Current Emails");
+console.log(emailList);
+
+// Step 2.2 - Get the text of the second email in the visible list
+console.log("Step 2.2 is the email body for message 2");
+console.log("Step 2.2 - " + inbox.email[1].body);
+
+// Step 2.3 - Mark an email as sent
+console.log("Step 2.3 - Changing the second email message to true from false");
+inbox.email[1].sent = true;
+console.log(inbox);  //Should see the second email as true
+
+
+//Step 2.4 - Add a draft email to the drafts mailbox
+//Modification: Change the email so it has an array of mailboxes it belongs to.
+//Add an email to the list and make sure it belongs to the draft mailbox
+inbox.email.push({
+  to: "Kate",
+  subject: "Tests came back Negative",
+  body: "But the Dr says I only 60 more years of life left, give or take 50.",
+  visible: true,
+  sent: false,
+  mailbox: ["drafts"]
+})
+console.log(inbox);  //Should see the second email as true
+
+// step 3 - push to github
